@@ -1,0 +1,7 @@
+abaid\pedidos360\bff\config\SecurityConfig.class
+abaid\pedidos360\bff\config\RestClientConfig.class
+abaid\pedidos360\bff\controller\PublicoController.class
+abaid\pedidos360\bff\BffApplication.class
+abaid\pedidos360\bff\controller\OrderProxyController.class
+abaid\pedidos360\bff\controller\CatalogProxyController.class
+abaid\pedidos360\bff\security\EntraRolesConverter.class

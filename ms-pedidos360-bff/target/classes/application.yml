@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: ms-pedidos360-bff
+
+pedidos360:
+  entra:
+    # Confirmado: requestedAccessTokenVersion = 2 en el manifest de la API,
+    # por eso el issuer usa /v2.0
+    issuer-uri: https://login.microsoftonline.com/a018a64b-37c3-42b0-a7b2-a6e50b7330a5/v2.0
+    # Confirmado leyendo el access token real: el "aud" es el Client ID (GUID)
+    # de la API, no el Application ID URI (api://...).
+    audience: "b1cb0637-0a06-45da-9404-4136890f007a"
+
+  cors:
+    # Lista separada por comas: local + la IP elástica de la EC2 cuando la tengas.
+    allowed-origins: http://localhost:4200
+
+  catalog-base-url: http://localhost:8082
+  orders-base-url: http://localhost:8081
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+    abaid.pedidos360.bff: DEBUG

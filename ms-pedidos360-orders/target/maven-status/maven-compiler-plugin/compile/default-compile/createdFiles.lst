@@ -1,0 +1,13 @@
+abaid\pedidos360\orders\dto\CambiarEstadoRequest.class
+abaid\pedidos360\orders\model\Order.class
+abaid\pedidos360\orders\model\EstadoPedido.class
+abaid\pedidos360\orders\service\OrderService.class
+abaid\pedidos360\orders\dto\CrearPedidoRequest.class
+abaid\pedidos360\orders\model\OrderItem.class
+abaid\pedidos360\orders\repository\OrderRepository.class
+abaid\pedidos360\orders\client\CatalogClient.class
+abaid\pedidos360\orders\client\StockUpdateBody.class
+abaid\pedidos360\orders\client\ProductoInfo.class
+abaid\pedidos360\orders\controller\OrderController.class
+abaid\pedidos360\orders\OrdersApplication.class
+abaid\pedidos360\orders\dto\ItemPedidoRequest.class

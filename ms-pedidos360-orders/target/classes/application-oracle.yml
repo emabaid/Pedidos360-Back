@@ -1,0 +1,23 @@
+# Perfil para usar Oracle Autonomous Database (Always Free) en vez de H2.
+# Actívalo con la variable de entorno: SPRING_PROFILES_ACTIVE=oracle
+#
+# Usa el MISMO schema/usuario que ms-pedidos360-catalog (ORDERS y
+# ORDER_ITEMS no chocan con PRODUCTS), así que las variables son iguales:
+#   TNS_ADMIN, ORACLE_DB_SERVICE, ORACLE_DB_USER, ORACLE_DB_PASSWORD
+
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@${ORACLE_DB_SERVICE}?TNS_ADMIN=${TNS_ADMIN}
+    username: ${ORACLE_DB_USER}
+    password: ${ORACLE_DB_PASSWORD}
+    driver-class-name: oracle.jdbc.OracleDriver
+
+  jpa:
+    database-platform: org.hibernate.dialect.OracleDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  h2:
+    console:
+      enabled: false

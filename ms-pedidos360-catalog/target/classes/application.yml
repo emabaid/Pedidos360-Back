@@ -1,0 +1,33 @@
+# Perfil por defecto: H2 en archivo, para desarrollo rápido sin depender de OCI.
+# Para producción/EC2 usa: SPRING_PROFILES_ACTIVE=oracle (ver application-oracle.yml)
+server:
+  port: 8082
+
+spring:
+  application:
+    name: ms-pedidos360-catalog
+
+  datasource:
+    url: jdbc:h2:file:./data/catalog-db;AUTO_SERVER=TRUE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: false
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  sql:
+    init:
+      mode: always
+
+logging:
+  level:
+    abaid.pedidos360.catalog: DEBUG

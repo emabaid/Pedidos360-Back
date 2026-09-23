@@ -1,0 +1,6 @@
+abaid\pedidos360\catalog\CatalogApplication.class
+abaid\pedidos360\catalog\controller\ProductController.class
+abaid\pedidos360\catalog\dto\StockUpdateRequest.class
+abaid\pedidos360\catalog\service\ProductService.class
+abaid\pedidos360\catalog\repository\ProductRepository.class
+abaid\pedidos360\catalog\model\Product.class
