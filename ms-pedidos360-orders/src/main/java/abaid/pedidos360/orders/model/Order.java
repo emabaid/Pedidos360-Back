@@ -26,7 +26,12 @@ public class Order {
 
     private LocalDateTime fechaActualizacion;
 
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
+    // EAGER (no LAZY, que es el default de @OneToMany): sin esto, al listar
+    // pedidos fuera de la transacción de Hibernate (ej. al serializar a JSON
+    // en el controller), tirar getItems() lanza LazyInitializationException
+    // y Spring lo convierte en un 500 Internal Server Error. Con pocos items
+    // por pedido, EAGER es simple y seguro para el tamaño de este proyecto.
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<OrderItem> items = new ArrayList<>();
 
     public Order() {}
